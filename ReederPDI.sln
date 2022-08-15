@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2017
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReederPDI", "ReederPDI\ReederPDI.csproj", "{19DD1EC3-73B4-4F4E-8C8A-A260C7B8673C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19DD1EC3-73B4-4F4E-8C8A-A260C7B8673C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DD1EC3-73B4-4F4E-8C8A-A260C7B8673C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19DD1EC3-73B4-4F4E-8C8A-A260C7B8673C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19DD1EC3-73B4-4F4E-8C8A-A260C7B8673C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C54FAEB6-B213-4A8F-AB88-2612F3272BB7}
+	EndGlobalSection
+EndGlobal

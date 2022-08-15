@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "JsonView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+<center>
+    <h2>REEDER | PDI</h2>
+</center>
+<table id="tablePDI" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>SERIALNO</th>
+            <th>Date</th>
+            <th>IMEINO1</th>
+            <th>IMEINO2</th>
+            <th>Device</th>
+            <th>TP000</th>
+            <th>LP000</th>
+            <th>PP000</th>
+            <th>BP000</th>
+            <th>CP000</th>
+            <th>NP000</th>
+            <th>VP000</th>
+            <th>SP000</th>
+            <th>JP000</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>SERIALNO</th>
+            <th>Date</th>
+            <th>IMEINO1</th>
+            <th>IMEINO2</th>
+            <th>Device</th>
+            <th>TP000</th>
+            <th>LP000</th>
+            <th>PP000</th>
+            <th>BP000</th>
+            <th>CP000</th>
+            <th>NP000</th>
+            <th>VP000</th>
+            <th>SP000</th>
+            <th>JP000</th>
+        </tr>
+    </tfoot>
+</table>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+<link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
+<link href="https://code.jquery.com/jquery-3.5.1.js"/>
+<link href="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"/>
+<link href="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"/>
+
+
+@section scripts{
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+    @*Jquery Advanced DataTable With Searchable Columns*@
+    <script>
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#tablePDI tfoot th').each(function (i) {
+                var title = $('#tablePDI thead th').eq($(this).index()).text();
+                $(this).html('<input type="text" placeholder="' + title + '" data-index="' + i + '" />');
+            });
+            // DataTable
+            var table = $('#tablePDI').DataTable({
+                scrollY: "1000px",
+                scrollX: true,
+                scrollCollapse: true,
+                paging: false,
+                fixedColumns: true,
+                "ajax": {
+                    "url": "/Home/GetPDI",
+                    "type": "GET",
+                    "datatype": "json",
+                },
+                "columns": [
+                    { "data": "ID", "id": "ID", "autoWidth": true },
+                    { "data": "SERIALNO", "id": "SERIALNO", "autoWidth": true },
+                    { "data": "Date", "id": "Date", "autoWidth": true },
+                    { "data": "IMEINO1", "id": "IMEINO1", "autoWidth": true },
+                    { "data": "IMEINO2", "id": "IMEINO2", "autoWidth": true },
+                    { "data": "Device", "id": "Device", "autoWidth": true },
+                    { "data": "TP000", "id": "TP000", "autoWidth": true },
+                    { "data": "LP000", "id": "LP000", "autoWidth": true },
+                    { "data": "PP000", "id": "PP000", "autoWidth": true },
+                    { "data": "BP000", "id": "BP000", "autoWidth": true },
+                    { "data": "CP000", "id": "CP000", "autoWidth": true },
+                    { "data": "NP000", "id": "NP000", "autoWidth": true },
+                    { "data": "VP000", "id": "VP000", "autoWidth": true },
+                    { "data": "SP000", "id": "SP000", "autoWidth": true },
+                    { "data": "JP000", "id": "JP000", "autoWidth": true },
+                ],
+
+            });
+
+            // Filter event handler
+            $(table.table().container()).on('keyup', 'tfoot input', function () {
+                table
+                    .column($(this).data('index'))
+                    .search(this.value)
+                    .draw();
+            });
+        });
+    </script>
+    @*END OF Jquery Advanced DataTable With Searchable Columns*@
+
+}
+
+
+
+@*Jquery Basic DataTable Without Searchable Columns*@
+
+
+@*<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <style type="text/css">
+            body {
+                font-family: Arial;
+                font-size: 10pt;
+            }
+
+            table {
+                border: 1px solid #ccc;
+            }
+
+                table th {
+                    background-color: #F7F7F7;
+                    color: #333;
+                    font-weight: bold;
+                }
+
+                table th, table td {
+                    padding: 5px;
+                    border-color: #ccc;
+                }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+        <script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(function () {
+                $('[id*=TablePDI]').DataTable({
+                    "ajax": {
+                        "url": "/Home/GetData",
+                        "type": "GET",
+                        "datatype": "json"
+                    },
+                    "columns": [
+                        { "data": "ID", "autoWidth": true },
+                        { "data": "SERIALNO", "autoWidth": true },
+                        { "data": "Date", "autoWidth": true },
+                        { "data": "IMEINO1", "autoWidth": true },
+                        { "data": "IMEINO2", "autoWidth": true },
+                        { "data": "Device", "autoWidth": true },
+                        { "data": "TP000", "autoWidth": true },
+                        { "data": "LP000", "autoWidth": true },
+                        { "data": "PP000", "autoWidth": true },
+                        { "data": "BP000", "autoWidth": true },
+                        { "data": "CP000", "autoWidth": true },
+                        { "data": "NP000", "autoWidth": true },
+                        { "data": "VP000", "autoWidth": true },
+                        { "data": "SP000", "autoWidth": true },
+                        { "data": "JP000", "autoWidth": true },
+
+                    ]
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <table id="TablePDI" data-page-length="5">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>SERIALNO</th>
+                        <th>Date</th>
+                        <th>IMEINO1</th>
+                        <th>IMEINO2</th>
+                        <th>Device</th>
+                        <th>TP000</th>
+                        <th>LP000</th>
+                        <th>PP000</th>
+                        <th>BP000</th>
+                        <th>CP000</th>
+                        <th>NP000</th>
+                        <th>VP000</th>
+                        <th>SP000</th>
+                        <th>JP000</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </body>
+    </html>*@
+
+@*END OF Jquery Basic DataTable Without Searchable Columns*@

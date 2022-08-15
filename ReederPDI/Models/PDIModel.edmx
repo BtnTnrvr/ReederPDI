@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ReederTSWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TableBoxProblem">
+          <Key>
+            <PropertyRef Name="ID_Box" />
+          </Key>
+          <Property Name="ID_Box" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JP000_Box" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableCameraProblem">
+          <Key>
+            <PropertyRef Name="ID_Camera" />
+          </Key>
+          <Property Name="ID_Camera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CP000_Camera" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableChargeProblem">
+          <Key>
+            <PropertyRef Name="ID_Charge" />
+          </Key>
+          <Property Name="ID_Charge" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BP000_Charge" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableDevices">
+          <Key>
+            <PropertyRef Name="ID_Devices" />
+          </Key>
+          <Property Name="ID_Devices" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Devices_Devices" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TableFlexProblem">
+          <Key>
+            <PropertyRef Name="ID_Flex" />
+          </Key>
+          <Property Name="ID_Flex" Type="int" Nullable="false" />
+          <Property Name="SP000_Flex" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableLCDProblem">
+          <Key>
+            <PropertyRef Name="ID_LCD" />
+          </Key>
+          <Property Name="ID_LCD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LP000_LCD" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableLogin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password_" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TableMotherBoardProblem">
+          <Key>
+            <PropertyRef Name="ID_MotherBoard" />
+          </Key>
+          <Property Name="ID_MotherBoard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PP000_MotherBoard" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableNetworkProblem">
+          <Key>
+            <PropertyRef Name="ID_Network" />
+          </Key>
+          <Property Name="ID_Network" Type="int" Nullable="false" />
+          <Property Name="NP000_Network" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TablePDI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="Device" Type="varchar(max)" />
+          <Property Name="TP000" Type="varchar(max)" />
+          <Property Name="LP000" Type="varchar(max)" />
+          <Property Name="PP000" Type="varchar(max)" />
+          <Property Name="BP000" Type="varchar(max)" />
+          <Property Name="CP000" Type="varchar(max)" />
+          <Property Name="NP000" Type="varchar(max)" />
+          <Property Name="VP000" Type="varchar(max)" />
+          <Property Name="SP000" Type="varchar(max)" />
+          <Property Name="JP000" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TablePDI_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="Device" Type="nvarchar(max)" />
+          <Property Name="TP000" Type="nvarchar(max)" />
+          <Property Name="LP000" Type="nvarchar(max)" />
+          <Property Name="PP000" Type="nvarchar(max)" />
+          <Property Name="BP000" Type="nvarchar(max)" />
+          <Property Name="CP000" Type="nvarchar(max)" />
+          <Property Name="NP000" Type="nvarchar(max)" />
+          <Property Name="VP000" Type="nvarchar(max)" />
+          <Property Name="SP000" Type="nvarchar(max)" />
+          <Property Name="JP000" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TableSoundProblem">
+          <Key>
+            <PropertyRef Name="ID_Sound" />
+          </Key>
+          <Property Name="ID_Sound" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VP000_Sound" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableTocuhProblem">
+          <Key>
+            <PropertyRef Name="ID_Touch" />
+          </Key>
+          <Property Name="ID_Touch" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TP000_Touch" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ReederTSWebModelStoreContainer">
+          <EntitySet Name="TableBoxProblem" EntityType="Self.TableBoxProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableCameraProblem" EntityType="Self.TableCameraProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableChargeProblem" EntityType="Self.TableChargeProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableDevices" EntityType="Self.TableDevices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableFlexProblem" EntityType="Self.TableFlexProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableLCDProblem" EntityType="Self.TableLCDProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableLogin" EntityType="Self.TableLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableMotherBoardProblem" EntityType="Self.TableMotherBoardProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableNetworkProblem" EntityType="Self.TableNetworkProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TablePDI" EntityType="Self.TablePDI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TablePDI_UPDATED" EntityType="Self.TablePDI_UPDATED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableSoundProblem" EntityType="Self.TableSoundProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableTocuhProblem" EntityType="Self.TableTocuhProblem" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReederTSWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TableBoxProblem">
+          <Key>
+            <PropertyRef Name="ID_Box" />
+          </Key>
+          <Property Name="ID_Box" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JP000_Box" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableCameraProblem">
+          <Key>
+            <PropertyRef Name="ID_Camera" />
+          </Key>
+          <Property Name="ID_Camera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CP000_Camera" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableChargeProblem">
+          <Key>
+            <PropertyRef Name="ID_Charge" />
+          </Key>
+          <Property Name="ID_Charge" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BP000_Charge" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableDevices">
+          <Key>
+            <PropertyRef Name="ID_Devices" />
+          </Key>
+          <Property Name="ID_Devices" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Devices_Devices" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableFlexProblem">
+          <Key>
+            <PropertyRef Name="ID_Flex" />
+          </Key>
+          <Property Name="ID_Flex" Type="Int32" Nullable="false" />
+          <Property Name="SP000_Flex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableLCDProblem">
+          <Key>
+            <PropertyRef Name="ID_LCD" />
+          </Key>
+          <Property Name="ID_LCD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LP000_LCD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableLogin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TableMotherBoardProblem">
+          <Key>
+            <PropertyRef Name="ID_MotherBoard" />
+          </Key>
+          <Property Name="ID_MotherBoard" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PP000_MotherBoard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableNetworkProblem">
+          <Key>
+            <PropertyRef Name="ID_Network" />
+          </Key>
+          <Property Name="ID_Network" Type="Int32" Nullable="false" />
+          <Property Name="NP000_Network" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TablePDI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Device" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="JP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableSoundProblem">
+          <Key>
+            <PropertyRef Name="ID_Sound" />
+          </Key>
+          <Property Name="ID_Sound" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VP000_Sound" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TableTocuhProblem">
+          <Key>
+            <PropertyRef Name="ID_Touch" />
+          </Key>
+          <Property Name="ID_Touch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TP000_Touch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="PDIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TableBoxProblem" EntityType="Self.TableBoxProblem" />
+          <EntitySet Name="TableCameraProblem" EntityType="Self.TableCameraProblem" />
+          <EntitySet Name="TableChargeProblem" EntityType="Self.TableChargeProblem" />
+          <EntitySet Name="TableDevices" EntityType="Self.TableDevices" />
+          <EntitySet Name="TableFlexProblem" EntityType="Self.TableFlexProblem" />
+          <EntitySet Name="TableLCDProblem" EntityType="Self.TableLCDProblem" />
+          <EntitySet Name="TableLogin" EntityType="Self.TableLogin" />
+          <EntitySet Name="TableMotherBoardProblem" EntityType="Self.TableMotherBoardProblem" />
+          <EntitySet Name="TableNetworkProblem" EntityType="Self.TableNetworkProblem" />
+          <EntitySet Name="TablePDI" EntityType="Self.TablePDI" />
+          <EntitySet Name="TableSoundProblem" EntityType="Self.TableSoundProblem" />
+          <EntitySet Name="TableTocuhProblem" EntityType="Self.TableTocuhProblem" />
+          <EntitySet Name="TablePDI_UPDATED" EntityType="ReederTSWebModel.TablePDI_UPDATED" />
+        </EntityContainer>
+        <EntityType Name="TablePDI_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Device" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ReederTSWebModelStoreContainer" CdmEntityContainer="PDIEntities">
+          <EntitySetMapping Name="TableBoxProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableBoxProblem">
+              <MappingFragment StoreEntitySet="TableBoxProblem">
+                <ScalarProperty Name="ID_Box" ColumnName="ID_Box" />
+                <ScalarProperty Name="JP000_Box" ColumnName="JP000_Box" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableCameraProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableCameraProblem">
+              <MappingFragment StoreEntitySet="TableCameraProblem">
+                <ScalarProperty Name="ID_Camera" ColumnName="ID_Camera" />
+                <ScalarProperty Name="CP000_Camera" ColumnName="CP000_Camera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableChargeProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableChargeProblem">
+              <MappingFragment StoreEntitySet="TableChargeProblem">
+                <ScalarProperty Name="ID_Charge" ColumnName="ID_Charge" />
+                <ScalarProperty Name="BP000_Charge" ColumnName="BP000_Charge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableDevices">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableDevices">
+              <MappingFragment StoreEntitySet="TableDevices">
+                <ScalarProperty Name="ID_Devices" ColumnName="ID_Devices" />
+                <ScalarProperty Name="Devices_Devices" ColumnName="Devices_Devices" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableFlexProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableFlexProblem">
+              <MappingFragment StoreEntitySet="TableFlexProblem">
+                <ScalarProperty Name="ID_Flex" ColumnName="ID_Flex" />
+                <ScalarProperty Name="SP000_Flex" ColumnName="SP000_Flex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableLCDProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableLCDProblem">
+              <MappingFragment StoreEntitySet="TableLCDProblem">
+                <ScalarProperty Name="ID_LCD" ColumnName="ID_LCD" />
+                <ScalarProperty Name="LP000_LCD" ColumnName="LP000_LCD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableLogin">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableLogin">
+              <MappingFragment StoreEntitySet="TableLogin">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="password_" ColumnName="password_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableMotherBoardProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableMotherBoardProblem">
+              <MappingFragment StoreEntitySet="TableMotherBoardProblem">
+                <ScalarProperty Name="ID_MotherBoard" ColumnName="ID_MotherBoard" />
+                <ScalarProperty Name="PP000_MotherBoard" ColumnName="PP000_MotherBoard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableNetworkProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableNetworkProblem">
+              <MappingFragment StoreEntitySet="TableNetworkProblem">
+                <ScalarProperty Name="ID_Network" ColumnName="ID_Network" />
+                <ScalarProperty Name="NP000_Network" ColumnName="NP000_Network" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TablePDI">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TablePDI">
+              <MappingFragment StoreEntitySet="TablePDI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="Device" ColumnName="Device" />
+                <ScalarProperty Name="TP000" ColumnName="TP000" />
+                <ScalarProperty Name="LP000" ColumnName="LP000" />
+                <ScalarProperty Name="PP000" ColumnName="PP000" />
+                <ScalarProperty Name="BP000" ColumnName="BP000" />
+                <ScalarProperty Name="CP000" ColumnName="CP000" />
+                <ScalarProperty Name="NP000" ColumnName="NP000" />
+                <ScalarProperty Name="VP000" ColumnName="VP000" />
+                <ScalarProperty Name="SP000" ColumnName="SP000" />
+                <ScalarProperty Name="JP000" ColumnName="JP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableSoundProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableSoundProblem">
+              <MappingFragment StoreEntitySet="TableSoundProblem">
+                <ScalarProperty Name="ID_Sound" ColumnName="ID_Sound" />
+                <ScalarProperty Name="VP000_Sound" ColumnName="VP000_Sound" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableTocuhProblem">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TableTocuhProblem">
+              <MappingFragment StoreEntitySet="TableTocuhProblem">
+                <ScalarProperty Name="ID_Touch" ColumnName="ID_Touch" />
+                <ScalarProperty Name="TP000_Touch" ColumnName="TP000_Touch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TablePDI_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TablePDI_UPDATED">
+              <MappingFragment StoreEntitySet="TablePDI_UPDATED">
+                <ScalarProperty Name="JP000" ColumnName="JP000" />
+                <ScalarProperty Name="SP000" ColumnName="SP000" />
+                <ScalarProperty Name="VP000" ColumnName="VP000" />
+                <ScalarProperty Name="NP000" ColumnName="NP000" />
+                <ScalarProperty Name="CP000" ColumnName="CP000" />
+                <ScalarProperty Name="BP000" ColumnName="BP000" />
+                <ScalarProperty Name="PP000" ColumnName="PP000" />
+                <ScalarProperty Name="LP000" ColumnName="LP000" />
+                <ScalarProperty Name="TP000" ColumnName="TP000" />
+                <ScalarProperty Name="Device" ColumnName="Device" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

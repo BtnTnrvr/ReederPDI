@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "2022 | Reeder PDI Login";
+    Layout = "~/Views/_LayoutPageLogin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="signinform">
+        <h1>Reeder | PDI</h1>
+        <!-- container -->
+        <div class="container">
+            <!-- main content -->
+            <div class="w3l-form-info">
+                <div class="w3_info">
+                    <h2>GİRİŞ</h2>
+                    <form action="Verify" method="post">
+                        <div class="input-group">
+                            <span><i class="fas fa-user" aria-hidden="true"></i></span>
+                            <input type="text" name="Name" placeholder="Kullanıcı Adı" required="">
+                        </div>
+                        <div class="input-group">
+                            <span><i class="fas fa-key" aria-hidden="true"></i></span>
+                            <input type="Password" name="Password" placeholder="Şifre" required="">
+                        </div>
+                        <button id="btnLogin" class="btn btn-primary btn-block" type="submit">GİRİŞ</button>
+                    </form>
+                </div>
+            </div>
+            <!-- //main content -->
+        </div>
+        <!-- //container -->
+        <!-- footer -->
+        <div class="footer">
+            <p>
+            <p>&copy; @DateTime.Now.Year | Powered By Reeder IT</p>
+        </div>
+        <!-- footer -->
+    </div>
+    <!-- fontawesome v5-->
+    <script type="text/javascript" src="~/js/fontawesome.js"></script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+﻿@model ReederPDI.Models.TablePDI
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/select2.min.js"></script>
+    <link href="~/Content/css/select2.min.css" rel="stylesheet" />
+    @*ENTER AS TAB PRESS ON CHANGE*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var inputs = $(':input').keypress(function (e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    var nextInput = inputs.get(inputs.index(this) + 1);
+                    if (nextInput) {
+                        nextInput.focus();
+                    }
+                }
+            });
+
+        });
+    </script>
+    @*END OF ENTER CHANGE*@
+</head>
+
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+    <center>
+        <div class="form-horizontal">
+            <center>
+                <h2>REEDER | PDI</h2>
+            </center>
+            <br /><br />
+            <div class="form-group">
+                @*TARİH*@
+                @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Date, "{0:dd-MM-yyyy}", new { type = "date", style = "width: 478px" })
+                </div>
+                <br /><br />
+                @*SERIALNO*@
+                @Html.LabelFor(model => model.SERIALNO, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div style="width:500px" class="col-md-10">
+                    @Html.EditorFor(model => model.SERIALNO, new { htmlAttributes = new { @class = "form-control", @maxlength = "14" } })
+                    @Html.ValidationMessageFor(model => model.SERIALNO, "", new { @class = "text-danger" })
+                </div>
+                <br /><br />
+                @*IMEI1*@
+                @Html.LabelFor(model => model.IMEINO1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div style="width:500px" class="col-md-10">
+                    @Html.EditorFor(model => model.IMEINO1, new { htmlAttributes = new { @class = "form-control", @maxlength = "15" } })
+                    @Html.ValidationMessageFor(model => model.IMEINO1, "", new { @class = "text-danger" })
+                </div>
+                <br /><br />
+                @*IMEI2*@
+                @Html.LabelFor(model => model.IMEINO2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div style="width:500px" class="col-md-10">
+                    @Html.EditorFor(model => model.IMEINO2, new { htmlAttributes = new { @class = "form-control", @maxlength = "15" } })
+                    @Html.ValidationMessageFor(model => model.IMEINO2, "", new { @class = "text-danger" })
+                </div>
+                <br /><br />
+            </div>
+            @*DEVİCE*@
+
+            <div class="form-group">
+                <label>Cihazlar</label> <br />
+                @*Normal DropDown*@
+                @Html.DropDownListFor(model => model.SelectedID9Array, new SelectList(Model.GetDeviceList, "ID_Devices", "Devices_Devices"), new { id = "normalDropDown", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*CİHAZ
+        <br />
+        <h6>CİHAZ</h6>
+        <select class="Devices" style="width:500px"></select>
+
+        <script>
+            $(document).ready(function () {
+                $(".Devices").select2({
+                    placeholder: "--------Cihaz Seçiniz--------",
+                    theme: "classic",
+                    ajax: {
+                        url: "/Home/GetDevicesList",
+                        dataType: "json",
+                        data: function (params) {
+                            return {
+                                searchTerm: params.term
+                            };
+                        },
+                        processResults: function (data, params) {
+                            return {
+                                results: data
+                            };
+                        }
+                    }
+                });
+            });
+        </script>
+        <br /> <br /> <br />*@
+            @*TOUCH PROBLEM*@
+
+            <div class="form-group">
+                <label>Dokunmatik Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedIDArray, new MultiSelectList(Model.GetTP000List, "ID_Touch", "TP000_Touch"), new { id = "multiSelectDropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*LCD PROBLEM*@
+
+            <div class="form-group">
+                <label>LCD Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedID1Array, new MultiSelectList(Model.GetLP000List, "ID_LCD", "LP000_LCD"), new { id = "multiSelect1DropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*MOTHERBOARD PROBLEM*@
+
+            <div class="form-group">
+                <label>Anakart Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedID2Array, new MultiSelectList(Model.GetPP000List, "ID_MotherBoard", "PP000_MotherBoard"), new { id = "multiSelect2DropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*CHARGE PROBLEM*@
+
+            <div class="form-group">
+                <label>Şarj Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedID3Array, new MultiSelectList(Model.GetBP000List, "ID_Charge", "BP000_Charge"), new { id = "multiSelect3DropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*CAMERA PROBLEM*@
+
+            <div class="form-group">
+                <label>Kamera Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedID4Array, new MultiSelectList(Model.GetCP000List, "ID_Camera", "CP000_Camera"), new { id = "multiSelect4DropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*NETWORK PROBLEM*@
+
+            <div class="form-group">
+                <label>Şebeke Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedID5Array, new MultiSelectList(Model.GetNP000List, "ID_Network", "NP000_Network"), new { id = "multiSelect5DropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*SOUND PROBLEM*@
+
+            <div class="form-group">
+                <label>Ses Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedID6Array, new MultiSelectList(Model.GetVP000List, "ID_Sound", "VP000_Sound"), new { id = "multiSelect6DropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*FLEX PROBLEM*@
+
+            <div class="form-group">
+                <label>Sensör/Flash/Flex Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedID7Array, new MultiSelectList(Model.GetSP000List, "ID_Flex", "SP000_Flex"), new { id = "multiSelect7DropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            @*BOX PROBLEM*@
+
+            <div class="form-group">
+                <label>Kapak/Jelatin/Kutu Problemleri</label> <br />
+                @*MultiSelect DropDown*@
+                @Html.ListBoxFor(model => model.SelectedID8Array, new MultiSelectList(Model.GetJP000List, "ID_Box", "JP000_Box"), new { id = "multiSelect8DropDown", multiple = "multiple", style = "width: 478px" })
+            </div>
+            <br /> <br />
+            <div class="form-group">
+                @*Dokunmatik Problemleri
+            <br /><br />
+            <h6>Dokunmatik Problemleri</h6>
+            <select class="Touch" style="width:350px; display:inline-block" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".Touch").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetTouchList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search1Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>
+            @*LCD Problemleri
+            <br /><br />
+            <h6>LCD Problemleri</h6>
+            <select class="LCD" style="width:350px; display:inline-block" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".LCD").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetLCDList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search2Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>*@
+                @*Anakart Problemleri*@
+                @*<br /><br />
+            <h6>Anakart Problemleri</h6>
+            <select class="MotherBoard" style="width:350px; display:inline-block" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".MotherBoard").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetMotherBoardList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search3Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>
+            @*Şarj Problemleri*
+            <br /><br />
+            <h6>Şarj Problemleri</h6>
+            <select class="Charge" style="width:350px; display:inline-block" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".Charge").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetChargeList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search4Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>
+            Kamera Problemleri
+            <br /><br />
+            <h6>Kamera Problemleri</h6>
+            <select class="Camera" style="width:350px" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".Camera").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetCameraList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search6Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>
+            Şebeke Problemleri
+            <br /><br />
+            <h6>Şebeke Problemleri</h6>
+            <select class="Network" style="width:350px" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".Network").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetNetworkList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search6Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>
+            Ses Problemleri
+            <br /><br />
+            <h6>Ses Problemleri</h6>
+            <select class="Sound" style="width:350px" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".Sound").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetSoundList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search7Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>
+            Sensör/Flash/Flex Problemleri
+            <br /><br />
+            <h6>Sensör/Flash/Flex Problemleri</h6>
+            <select class="Flex" style="width:350px" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".Flex").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetFlexList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search8Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>
+            Kapak/Jelatin/Kutu Problemleri
+            <br /><br />
+            <h6>Kapak/Jelatin/Kutu Problemleri</h6>
+            <select class="Box" style="width:350px" multiple></select>
+
+            <script>
+                $(document).ready(function () {
+                    $(".Box").select2({
+                        placeholder: "",
+                        theme: "classic",
+                        ajax: {
+                            url: "/Home/GetBoxList",
+                            dataType: "json",
+                            data: function (params) {
+                                return {
+                                    search9Term: params.term
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data
+                                };
+                            }
+                        }
+                    });
+                });
+            </script>
+            <br /> <br />*@
+            </div>
+            @*BUTON KAYDET*@
+            <div class="col-md-offset-2 col-md-10">
+                <input id="btnSave" type="submit" value="KAYDET" class="btn btn-outline-success" />
+            </div>
+        </div>
+    </center>
+    }
+
+    @section scripts {
+        <script>
+            //Normal DropDown
+            //DEVİCES
+            $(document).ready(function () {
+                $("#normalDropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //TOUCH PROBLEM
+            $(document).ready(function () {
+                $("#multiSelectDropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //LCD PROBLEM
+            $(document).ready(function () {
+                $("#multiSelect1DropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //MOTHERBOARD PROBLEM
+            $(document).ready(function () {
+                $("#multiSelect2DropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //CHARGE PROBLEM
+            $(document).ready(function () {
+                $("#multiSelect3DropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //CAMERA PROBLEM
+            $(document).ready(function () {
+                $("#multiSelect4DropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //NETWORK PROBLEM
+            $(document).ready(function () {
+                $("#multiSelect5DropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //SOUND PROBLEM
+            $(document).ready(function () {
+                $("#multiSelect6DropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //FLEX PROBLEM
+            $(document).ready(function () {
+                $("#multiSelect7DropDown").chosen({
+                });
+            });
+            //MultiSelect DropDown
+            //BOX PROBLEM
+            $(document).ready(function () {
+                $("#multiSelect8DropDown").chosen({
+                });
+            });
+        </script>
+    }
+</body>
