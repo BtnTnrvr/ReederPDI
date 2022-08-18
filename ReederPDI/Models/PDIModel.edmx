@@ -5,6 +5,110 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ReederTSWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.BP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="BP000" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.CP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="CP000" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.DEVICE_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DEVICE_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="Device" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.JP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="JP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="JP000" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.LP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="LP000" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.NP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="NP000" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.PP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="PP000" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.SP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="SP000" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="TableBoxProblem">
           <Key>
             <PropertyRef Name="ID_Box" />
@@ -93,7 +197,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="SERIALNO" Type="nvarchar(max)" />
           <Property Name="Date" Type="varchar(max)" />
           <Property Name="IMEINO1" Type="nvarchar(max)" />
@@ -123,6 +227,32 @@
           <Property Name="ID_Touch" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TP000_Touch" Type="varchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.TP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="TP000" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ReederTSWeb.dbo.VP000_UPDATED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SERIALNO" Type="nvarchar(max)" />
+          <Property Name="Date" Type="varchar(max)" />
+          <Property Name="IMEINO1" Type="nvarchar(max)" />
+          <Property Name="IMEINO2" Type="nvarchar(max)" />
+          <Property Name="VP000" Type="nvarchar(max)" />
+        </EntityType>
         <EntityContainer Name="ReederTSWebModelStoreContainer">
           <EntitySet Name="TableBoxProblem" EntityType="Self.TableBoxProblem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TableCameraProblem" EntityType="Self.TableCameraProblem" Schema="dbo" store:Type="Tables" />
@@ -137,6 +267,106 @@
           <EntitySet Name="TablePDI_UPDATED" EntityType="Self.TablePDI_UPDATED" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TableSoundProblem" EntityType="Self.TableSoundProblem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TableTocuhProblem" EntityType="Self.TableTocuhProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BP000_UPDATED" EntityType="Self.BP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BP000_UPDATED].[ID] AS [ID], 
+    [BP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [BP000_UPDATED].[Date] AS [Date], 
+    [BP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [BP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [BP000_UPDATED].[BP000] AS [BP000]
+    FROM [dbo].[BP000_UPDATED] AS [BP000_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CP000_UPDATED" EntityType="Self.CP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CP000_UPDATED].[ID] AS [ID], 
+    [CP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [CP000_UPDATED].[Date] AS [Date], 
+    [CP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [CP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [CP000_UPDATED].[CP000] AS [CP000]
+    FROM [dbo].[CP000_UPDATED] AS [CP000_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DEVICE_UPDATED" EntityType="Self.DEVICE_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DEVICE_UPDATED].[ID] AS [ID], 
+    [DEVICE_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [DEVICE_UPDATED].[Date] AS [Date], 
+    [DEVICE_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [DEVICE_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [DEVICE_UPDATED].[Device] AS [Device]
+    FROM [dbo].[DEVICE_UPDATED] AS [DEVICE_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="JP000_UPDATED" EntityType="Self.JP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [JP000_UPDATED].[ID] AS [ID], 
+    [JP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [JP000_UPDATED].[Date] AS [Date], 
+    [JP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [JP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [JP000_UPDATED].[JP000] AS [JP000]
+    FROM [dbo].[JP000_UPDATED] AS [JP000_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LP000_UPDATED" EntityType="Self.LP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LP000_UPDATED].[ID] AS [ID], 
+    [LP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [LP000_UPDATED].[Date] AS [Date], 
+    [LP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [LP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [LP000_UPDATED].[LP000] AS [LP000]
+    FROM [dbo].[LP000_UPDATED] AS [LP000_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NP000_UPDATED" EntityType="Self.NP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NP000_UPDATED].[ID] AS [ID], 
+    [NP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [NP000_UPDATED].[Date] AS [Date], 
+    [NP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [NP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [NP000_UPDATED].[NP000] AS [NP000]
+    FROM [dbo].[NP000_UPDATED] AS [NP000_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PP000_UPDATED" EntityType="Self.PP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PP000_UPDATED].[ID] AS [ID], 
+    [PP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [PP000_UPDATED].[Date] AS [Date], 
+    [PP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [PP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [PP000_UPDATED].[PP000] AS [PP000]
+    FROM [dbo].[PP000_UPDATED] AS [PP000_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SP000_UPDATED" EntityType="Self.SP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SP000_UPDATED].[ID] AS [ID], 
+    [SP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [SP000_UPDATED].[Date] AS [Date], 
+    [SP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [SP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [SP000_UPDATED].[SP000] AS [SP000]
+    FROM [dbo].[SP000_UPDATED] AS [SP000_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TP000_UPDATED" EntityType="Self.TP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TP000_UPDATED].[ID] AS [ID], 
+    [TP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [TP000_UPDATED].[Date] AS [Date], 
+    [TP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [TP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [TP000_UPDATED].[TP000] AS [TP000]
+    FROM [dbo].[TP000_UPDATED] AS [TP000_UPDATED]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VP000_UPDATED" EntityType="Self.VP000_UPDATED" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VP000_UPDATED].[ID] AS [ID], 
+    [VP000_UPDATED].[SERIALNO] AS [SERIALNO], 
+    [VP000_UPDATED].[Date] AS [Date], 
+    [VP000_UPDATED].[IMEINO1] AS [IMEINO1], 
+    [VP000_UPDATED].[IMEINO2] AS [IMEINO2], 
+    [VP000_UPDATED].[VP000] AS [VP000]
+    FROM [dbo].[VP000_UPDATED] AS [VP000_UPDATED]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -240,6 +470,116 @@
           <Property Name="ID_Touch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TP000_Touch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="BP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DEVICE_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Device" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VP000_UPDATED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMEINO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VP000" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityContainer Name="PDIEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TableBoxProblem" EntityType="Self.TableBoxProblem" />
           <EntitySet Name="TableCameraProblem" EntityType="Self.TableCameraProblem" />
@@ -253,13 +593,23 @@
           <EntitySet Name="TablePDI" EntityType="Self.TablePDI" />
           <EntitySet Name="TableSoundProblem" EntityType="Self.TableSoundProblem" />
           <EntitySet Name="TableTocuhProblem" EntityType="Self.TableTocuhProblem" />
+          <EntitySet Name="BP000_UPDATED" EntityType="Self.BP000_UPDATED" />
+          <EntitySet Name="CP000_UPDATED" EntityType="Self.CP000_UPDATED" />
+          <EntitySet Name="DEVICE_UPDATED" EntityType="Self.DEVICE_UPDATED" />
+          <EntitySet Name="JP000_UPDATED" EntityType="Self.JP000_UPDATED" />
+          <EntitySet Name="LP000_UPDATED" EntityType="Self.LP000_UPDATED" />
+          <EntitySet Name="NP000_UPDATED" EntityType="Self.NP000_UPDATED" />
+          <EntitySet Name="PP000_UPDATED" EntityType="Self.PP000_UPDATED" />
+          <EntitySet Name="SP000_UPDATED" EntityType="Self.SP000_UPDATED" />
+          <EntitySet Name="TP000_UPDATED" EntityType="Self.TP000_UPDATED" />
+          <EntitySet Name="VP000_UPDATED" EntityType="Self.VP000_UPDATED" />
           <EntitySet Name="TablePDI_UPDATED" EntityType="ReederTSWebModel.TablePDI_UPDATED" />
         </EntityContainer>
         <EntityType Name="TablePDI_UPDATED">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="SERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="IMEINO1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -388,6 +738,126 @@
               <MappingFragment StoreEntitySet="TableTocuhProblem">
                 <ScalarProperty Name="ID_Touch" ColumnName="ID_Touch" />
                 <ScalarProperty Name="TP000_Touch" ColumnName="TP000_Touch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.BP000_UPDATED">
+              <MappingFragment StoreEntitySet="BP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="BP000" ColumnName="BP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.CP000_UPDATED">
+              <MappingFragment StoreEntitySet="CP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="CP000" ColumnName="CP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEVICE_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.DEVICE_UPDATED">
+              <MappingFragment StoreEntitySet="DEVICE_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="Device" ColumnName="Device" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.JP000_UPDATED">
+              <MappingFragment StoreEntitySet="JP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="JP000" ColumnName="JP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.LP000_UPDATED">
+              <MappingFragment StoreEntitySet="LP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="LP000" ColumnName="LP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.NP000_UPDATED">
+              <MappingFragment StoreEntitySet="NP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="NP000" ColumnName="NP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.PP000_UPDATED">
+              <MappingFragment StoreEntitySet="PP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="PP000" ColumnName="PP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.SP000_UPDATED">
+              <MappingFragment StoreEntitySet="SP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="SP000" ColumnName="SP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.TP000_UPDATED">
+              <MappingFragment StoreEntitySet="TP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="TP000" ColumnName="TP000" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VP000_UPDATED">
+            <EntityTypeMapping TypeName="ReederTSWebModel.VP000_UPDATED">
+              <MappingFragment StoreEntitySet="VP000_UPDATED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IMEINO1" ColumnName="IMEINO1" />
+                <ScalarProperty Name="IMEINO2" ColumnName="IMEINO2" />
+                <ScalarProperty Name="VP000" ColumnName="VP000" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

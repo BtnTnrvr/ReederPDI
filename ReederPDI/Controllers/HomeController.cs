@@ -7,6 +7,7 @@ using ReederPDI.Models;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Entity;
+using System.Data.Entity.Core;
 
 namespace ReederPDI.Controllers
 {
@@ -277,12 +278,25 @@ namespace ReederPDI.Controllers
         //Jquery Advanced DataTable With Searchable Columns
         public ActionResult GetPDI()
         {
-            List<TablePDI_UPDATED> tpdiList = new List<TablePDI_UPDATED>();
-           using (PDIEntities db = new PDIEntities())
+            try
             {
-                tpdiList = db.TablePDI_UPDATED.ToList<TablePDI_UPDATED>();
-                return Json(new { data = tpdiList }, JsonRequestBehavior.AllowGet);
+                List<TablePDI_UPDATED> tpdiList = new List<TablePDI_UPDATED>();
+                using (PDIEntities db = new PDIEntities())
+                {
+                    tpdiList = db.TablePDI_UPDATED.ToList<TablePDI_UPDATED>();
+                    return Json(new { data = tpdiList }, JsonRequestBehavior.AllowGet);
+                }
             }
+            catch(Exception ex)
+            {
+                Console.Write("Veri Tabanı Bilgileri Yazdırmaya Çalışıyor Lütfen 1 Dakika Sonra Tekrar Deneyiniz!");
+            }
+            finally
+            {
+                Console.Write("Veri Tabanı Bilgileri Yazdırmaya Çalışıyor Lütfen 1 Dakika Sonra Tekrar Deneyiniz!");
+            }
+
+            return null;
         }
         //END OF Jquery Advanced DataTable With Searchable Columns
 

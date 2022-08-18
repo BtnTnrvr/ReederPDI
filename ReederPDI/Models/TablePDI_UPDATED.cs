@@ -11,9 +11,13 @@ namespace ReederPDI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TablePDI_UPDATED
     {
+
+        [Required(ErrorMessage = "Veri Tabaný Bilgileri Yazdýrmaya Çalýþýyor Lütfen 1 Dakika Sonra Tekrar Deneyiniz!")]
+
         public int ID { get; set; }
         public string SERIALNO { get; set; }
         public string Date { get; set; }

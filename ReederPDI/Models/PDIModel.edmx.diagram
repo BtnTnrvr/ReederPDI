@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e5c84dcc132e4dc384ecdc08bc54be79" Name="Diagram1">
+      <Diagram DiagramId="f1743395accf4a79b9fe8ac9975f5bae" Name="Diagram1">
         <EntityTypeShape EntityType="ReederTSWebModel.TableBoxProblem" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ReederTSWebModel.TableCameraProblem" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ReederTSWebModel.TableChargeProblem" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -17,7 +17,17 @@
         <EntityTypeShape EntityType="ReederTSWebModel.TablePDI" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ReederTSWebModel.TableSoundProblem" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ReederTSWebModel.TableTocuhProblem" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReederTSWebModel.TablePDI_UPDATED" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="ReederTSWebModel.BP000_UPDATED" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.CP000_UPDATED" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.DEVICE_UPDATED" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.JP000_UPDATED" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.LP000_UPDATED" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.NP000_UPDATED" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.PP000_UPDATED" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.SP000_UPDATED" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.TP000_UPDATED" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.VP000_UPDATED" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReederTSWebModel.TablePDI_UPDATED" Width="1.5" PointX="5.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

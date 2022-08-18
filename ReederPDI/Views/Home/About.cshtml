@@ -62,7 +62,7 @@
     <script>
         $(document).ready(function () {
             // Setup - add a text input to each footer cell
-            $('#tablePDI tfoot th').each(function (i) {
+            $('#tablePDI thead th').each(function (i) {
                 var title = $('#tablePDI thead th').eq($(this).index()).text();
                 $(this).html('<input type="text" placeholder="' + title + '" data-index="' + i + '" />');
             });
@@ -77,6 +77,7 @@
                     "url": "/Home/GetPDI",
                     "type": "GET",
                     "datatype": "json",
+                    "error": "Cannot delete. Must delete ... first",
                 },
                 "columns": [
                     { "data": "ID", "id": "ID", "autoWidth": true },
@@ -99,7 +100,7 @@
             });
 
             // Filter event handler
-            $(table.table().container()).on('keyup', 'tfoot input', function () {
+            $(table.table().container()).on('keyup', 'thead input', function () {
                 table
                     .column($(this).data('index'))
                     .search(this.value)
