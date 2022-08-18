@@ -23,7 +23,7 @@ namespace MVCLogin.Controllers
 
         void connnectionstring()
         {
-            con.ConnectionString = "data source=192.168.1.12,1433\\SQL;initial catalog=ReederTSWeb;user id=batinrd;password=batin159753;MultipleActiveResultSets=True;App=EntityFramework;";
+            con.ConnectionString = "data source=************,1433\\SQL;initial catalog=ReederTSWeb;user id=*******;password=***********;MultipleActiveResultSets=True;App=EntityFramework;";
         }
 
         [HttpPost]
